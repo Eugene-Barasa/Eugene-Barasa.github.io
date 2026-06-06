@@ -27,6 +27,21 @@
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
 
+    /* PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .project-card { background: var(--dark3); border: 1px solid rgba(201,168,76,0.1); padding: 2.5rem; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s; }
+    .project-card:hover { transform: translateY(-6px); border-color: rgba(201,168,76,0.4); }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+    .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--cream); margin-bottom: 0.8rem; font-weight: 400; }
+    .project-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .project-tag { font-size: 0.68rem; padding: 0.25rem 0.7rem; border: 1px solid rgba(201,168,76,0.2); border-radius: 2px; color: var(--gold); letter-spacing: 0.08em; }
+    .project-link { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.3s; }
+    .project-link:hover { gap: 0.8rem; }
+    @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 8rem 3rem 4rem; position: relative; overflow: hidden; gap: 4rem; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%); }
     .hero-content { position: relative; z-index: 2; }
@@ -129,6 +144,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#pillars">Pillars</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#interests">Interests</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -252,6 +268,50 @@
       <span class="tag">Problem Solving</span>
       <span class="tag">Emerging Technologies</span>
       <span class="tag">Servant Leadership</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="reveal">
+      <p class="section-label">What I've Built</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="projects-grid reveal">
+      <div class="project-card">
+        <div class="project-icon">🧮</div>
+        <h3 class="project-title">Student Grade Calculator</h3>
+        <p class="project-desc">A Python program that accepts student names and marks across multiple subjects, calculates averages, assigns grades, identifies the best student, and saves results to a file.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">File Handling</span>
+          <span class="project-tag">Functions</span>
+        </div>
+        <a href="https://github.com/Eugene-Barasa/Python-Projects/blob/main/grade_calculator.py" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">📖</div>
+        <h3 class="project-title">Bible Verse of the Day</h3>
+        <p class="project-desc">An interactive Python app that displays daily Bible verses, generates random verses, allows keyword search across scripture, and saves favourite verses to a personal file.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Random Module</span>
+          <span class="project-tag">File I/O</span>
+        </div>
+        <a href="https://github.com/Eugene-Barasa/Python-Projects/blob/main/bible_verse.py" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🦅</div>
+        <h3 class="project-title">Eagle Assistant Chatbot</h3>
+        <p class="project-desc">An AI-powered Faith & Bible chatbot that answers questions about Christianity, shares Bible verses by topic, provides prayers, explains Christian concepts, and logs conversations.</p>
+        <div class="project-tags">
+          <span class="project-tag">Python</span>
+          <span class="project-tag">AI / NLP</span>
+          <span class="project-tag">Chatbot</span>
+          <span class="project-tag">Faith</span>
+        </div>
+        <a href="https://github.com/Eugene-Barasa/Python-Projects/blob/main/faith_chatbot.py" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
     </div>
   </section>
 
